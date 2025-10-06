@@ -33,13 +33,14 @@ def draw_player(ax, x, y, name, role, o):
         ax.scatter(x, y,
                    c='lime', s=300, edgecolor='white',
                    alpha=1.0, label=str(role), marker='*', linewidth=3)
-        ax.text(x, y, name,
-                ha='center', va='bottom', fontsize=8, fontweight='bold', color='white',
-                bbox=dict(boxstyle="round,pad=0.3", facecolor='red', alpha=0.8, edgecolor='white'))
     else:
          ax.scatter(x, y,
                     c=role_colors[role], s=120, edgecolor='black',
                     alpha=0.8, label=str(role), linewidth=1.5)
+    if role == 'Targeted Receiver' or role == 'Potential Lurker':
+        ax.text(x, y, name,
+            ha='center', va='bottom', fontsize=8, fontweight='bold', color='white',
+            bbox=dict(boxstyle="round,pad=0.3", facecolor='red', alpha=0.4, edgecolor='white'))
     ax.plot([x, x + np.cos(np.deg2rad(o))], [y, y + np.sin(np.deg2rad(o))], linewidth = 1)
 
 # Function to draw circle for radius of player
