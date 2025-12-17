@@ -1,3 +1,5 @@
+# Given a play and game id, creates GIF showing player movement
+
 from matplotlib.patches import Circle, Ellipse
 import matplotlib.pyplot as plt
 import pandas as pd
